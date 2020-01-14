@@ -11,11 +11,14 @@ For example:
 'h3llo world' returns true
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
+//I worked with Randee over slack to figure this challenge out//
 
 const isNum = (input) => {
   let num = /[0-9]g;
   return num.test(input)
 };
+
+//I worked with Randee over slack to figure this challenge out//
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
