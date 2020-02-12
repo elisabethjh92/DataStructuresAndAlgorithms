@@ -29,7 +29,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  return str.match(/[A-Z]\w+/gm) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +39,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  const regex = (/^[A-J]\w+/gm);
+  arr.forEach( str => {
+    regex.test(str) ? newArr.push(str.match(regex)[0]) : null;
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +60,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  const regex = (/^[oO]ct(ober)?$/gm);
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +75,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  const regex = (/\w+\s+/gm);
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,7 +92,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  const regex = (/[aeiou]/gmi);
+  return str.replace(regex, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
