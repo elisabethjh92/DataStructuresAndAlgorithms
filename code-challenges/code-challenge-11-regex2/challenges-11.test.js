@@ -28,9 +28,9 @@ Return either true or false.
 
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
-
+//Got help from my boss (a software developer) on the next several code challenges
 const validateEmail = (email) => {
-  // Solution code here...
+  return /^\w+(\.\w+)?@\w+\.{1}(com|net|org)$/gmi.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  return /^([(]\d{3}[)]|\d{3})?( |-)?\d{3}( |-)?\d{4}$/gmi.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +68,12 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  return elements.map(str => {
+    let regex = /\/\w+/g;
+    return str.match(regex);
+  }).reduce((acc, cur) => {
+    return acc.concat(cur);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
