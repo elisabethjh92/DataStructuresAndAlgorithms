@@ -14,8 +14,8 @@ For example:
 //I worked with Randee over slack to figure this challenge out//
 
 const isNum = (input) => {
-  let num = /[0-9]g;
-  return num.test(input)
+  let number = (/([0-9])/gm);
+  return number.test(input);
 };
 
 //I worked with Randee over slack to figure this challenge out//
